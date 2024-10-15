@@ -1,1 +1,21 @@
+name: Run Shell Script Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run shell script
+        run: |
+          chmod +x ./ssh_action.sh
+          ./ssh_action.sh
+
 
