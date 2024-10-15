@@ -1,0 +1,17 @@
+name: Run Action file
+on:
+  push:
+    branches:
+      - main
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Action file
+        uses: ./ 
+        with:
+          example_input: 'Hello, World!'  
