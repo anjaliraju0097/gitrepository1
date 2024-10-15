@@ -14,4 +14,4 @@ jobs:
       - name: Run Action file
         uses: ./ 
         with:
-          example_input: 'Hey Anjali , success'  
+          example_input: 'Hey Anjali, success!'  
