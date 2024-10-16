@@ -1,17 +1,19 @@
-name: Run Action file
+name: Run SSH Action Workflow
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  run:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Run Action file
-        uses: ./ 
-        with:
-          example_input: 'Hey Anjali, success!'  
+      - name: Run shell script
+        run: |
+          chmod +x ./ssh_action.sh
+          ./ssh_action.sh
